@@ -1,0 +1,67 @@
+.progress-bar-container {
+  background-color: #ffffff;
+  display: flex;
+  white-space: normal;
+  height: 31px;
+  position: relative;
+}
+
+.secondary-bar {
+  width: 90%;
+  bottom: 0;
+  height: 15px;
+  display: inline-block;
+  position: absolute;
+}
+
+.progress-bar{
+ // display: flex;
+ width: 80%;
+ height: 15px;
+ bottom: 0;
+ display: block;
+ position: absolute;
+}
+
+.sticky-span{
+  position: sticky;
+  top: 32px;
+  font-weight: bold;
+}
+.percentage-text{
+  font-size: 12px;
+}
+.progress-holder{
+  position: relative;
+  width: 100%;
+}
+
+.popUp-precentage{
+  font-weight: bold;
+  display: inline-flex;
+  top: -19px;
+  left: -9%;
+  position: relative;
+}
+
+
+.progress-bar.green {
+  background-color: green;
+}
+.progress-bar.yellow {
+  background-color: yellow;
+}
+.progress-bar.red {
+  background-color: red;
+}
+.secondary-bar.secondary-green{
+  background-color: rgb(49, 199, 49);
+}
+
+.secondary-bar.secondary-yellow{
+  background-color: rgb(248, 248, 151);
+}
+
+.secondary-bar.secondary-red{
+  background-color: rgb(248, 130, 130);
+}

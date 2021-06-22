@@ -1,0 +1,195 @@
+<div class="sect-rect" *ngIf="leftRect">
+  <div class="row upper-part">
+    <div class="col-10 col-sm-8 p-3 pb-0 text-center">
+      <h3 class="heading">
+        Strategic Themes Progress <span class="comment">5 Dec.</span>
+      </h3>
+    </div>
+    <div class="col-1 d-none d-sm-block"></div>
+    <div class="col-2 col-sm-3 icons-wrapper">
+      <div class="row">
+        <div class="col-md-3 d-none d-md-block"><i class="far fa-lightbulb"></i></div>
+        <div class="col-md-3"><i class="fas fa-expand-arrows-alt"></i></div>
+        <div class="col-md-6 d-none d-md-block"><i class="fas fa-ellipsis-v"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row down-part">
+    <div class="col-2 col-md-2" id="chart">
+      <!--For Indicator-->
+        <apx-chart
+          [series]="chartOptions.series || []"
+          [chart]="chartOptions.chart!"
+          [plotOptions]="chartOptions.plotOptions!"
+          [labels]="chartOptions.labels!"
+          [fill]="chartOptions.fill!"
+        ></apx-chart>
+    </div>
+
+    <div class="col-1"></div>
+
+    <div class="col-9">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 heading">{{ headOne }}</div>
+            <div class="col-md-6">
+              <mat-progress-bar
+                mode="determinate"
+                [color]="colorDefiner(headOnePercentage)"
+                value="{{ headOnePercentage }}"
+              ></mat-progress-bar
+              ><span class="per-num">{{ headOnePercentage }}%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row pt-1">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 heading">{{ headTwo }}</div>
+            <div class="col-md-6">
+              <mat-progress-bar
+                mode="determinate"
+                [color]="colorDefiner(headTwoPercentage)"
+                value="{{ headTwoPercentage }}"
+              ></mat-progress-bar
+              ><span class="per-num">{{ headTwoPercentage }}%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row pt-1">
+        <div class="col-md-12 d-none d-md-block">
+          <div class="row">
+            <div class="col-md-6 heading">{{ headThree }}</div>
+            <div class="col-md-6">
+              <mat-progress-bar
+                mode="determinate"
+                [color]="colorDefiner(headThreePercentage)"
+                value="{{ headThreePercentage }}"
+              ></mat-progress-bar
+              ><span class="per-num">{{ headThreePercentage }}%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row pt-1">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6 heading">{{ headFour }}</div>
+            <div class="col-md-6">
+              <mat-progress-bar
+                mode="determinate"
+                [color]="colorDefiner(headFourPercentage)"
+                value="{{ headFourPercentage }}"
+              ></mat-progress-bar
+              ><span class="per-num">{{ headFourPercentage }}%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row pt-1">
+        <div class="col-md-12 d-none d-md-block">
+          <div class="row">
+            <div class="col-md-6 heading">{{ headFive }}</div>
+            <div class="col-md-6">
+              <mat-progress-bar
+                mode="determinate"
+                [color]="colorDefiner(headFivePercentage)"
+                value="{{ headFivePercentage }}"
+              ></mat-progress-bar
+              ><span class="per-num">{{ headFivePercentage }}%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row pt-1">
+        <div class="col-md-12 d-none d-md-block">
+          <div class="row">
+            <div class="col-md-6 heading ">{{ headSix }}</div>
+            <div class="col-md-6">
+              <mat-progress-bar
+                mode="determinate"
+                [color]="colorDefiner(headSixPercentage)"
+                value="{{ headSixPercentage }}"
+              ></mat-progress-bar
+              ><span class="per-num">{{ headSixPercentage }}%</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Liner for different UI -->
+<!-- Liner for different UI -->
+
+<div class="sect-rect" *ngIf="!leftRect">
+  <div class="row rect-wrapper">
+    <div class="col-md-12 d-none d-md-block ">
+      <div class="row upper-part ">
+        <div class="col-md-8 p-3 pb-0 text-center">
+          <h3 class="heading">
+            Monthly Milestones Tracker <span class="comment">5 Dec.</span>
+          </h3>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3 icons-wrapper">
+          <i class="far fa-lightbulb"></i>
+          <i class="fas fa-expand-arrows-alt"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </div>
+
+      <!-- The Four Down Rows-->
+
+      <div class="rows-wrapper p-4">
+        <div class="row dtc-row">
+          <div class="col-md-12 ">
+            <p class="m-0">
+              DTC
+              <span class="dtc-slm"
+                ><span *ngIf="dtcSLM > 0">+</span>{{ dtcSLM }}%</span
+              ><span class="dtc-text">Since last month</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <app-custom-progress-bar class="mb-3" [actual]="dtcActual" [planned]="dtcPlanned"></app-custom-progress-bar>
+          </div>
+        </div>
+
+        <div class="row den-row">
+          <div class="col-md-12">
+            <p class="m-0">
+              DEN
+              <span class="den-slm"
+                ><span *ngIf="denSLM > 0">+</span>{{ denSLM }}%</span
+              ><span class="den-text">Since last month</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="row den-progress">
+          <div class="col-md-12">
+            <app-custom-progress-bar [actual]="denActual" [planned]="denPlanned"></app-custom-progress-bar>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

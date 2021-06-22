@@ -1,0 +1,66 @@
+<div class="container-fluid pt-2">
+  <div class="row main-holder">
+    <!-- End of First Row-->
+    <div class="col-md-12">
+      <div class="row upper-row ">
+
+        <div class="col-md ps-5">
+          <h3 class="">Welcome,</h3>
+          <h1 class="">{{name}}</h1>
+          <h3 class="">This is how Application Sectors performing today</h3>
+        </div>
+
+        <div class="col-md"></div>
+
+        <div class="col-md d-none d-md-block">
+          <img src="../../../assets/imgs/analysis.svg" />
+        </div>
+      </div>
+
+      <!--The Departments Part-->
+      <div class="row down-row justify-content-center " >
+          <ng-container *ngFor="let dep of depInfo" class="col-md-2 ">
+            <app-department-box class="my-2 depBox" [depId]="dep.id" [depName]="dep.depName" [depIcon]="dep.icon" (click)="depClicked(dep.depName)" ></app-department-box>
+          </ng-container>
+      </div>
+
+        <div class="row d-flex">
+            <ng-container *ngIf="showSect">
+                <app-section class="col-md-6 d-flex justify-content-end" *ngFor="let dep of filteredDep"
+                [leftRect]="true"
+                [headOne]="dep.sectionDetails.governece.name"
+                [headTwo]="dep.sectionDetails.digitialTransform.name"
+                [headThree]="dep.sectionDetails.operationTransform.name"
+                [headFour]="dep.sectionDetails.serviceExperience.name"
+                [headFive]="dep.sectionDetails.businessDelivery.name"
+                [headSix]="dep.sectionDetails.hcd.name"
+
+                [headOnePercentage]="dep.sectionDetails.governece.percentage"
+                [headTwoPercentage]="dep.sectionDetails.digitialTransform.percentage"
+                [headThreePercentage]="dep.sectionDetails.operationTransform.percentage"
+                [headFourPercentage]="dep.sectionDetails.serviceExperience.percentage"
+                [headFivePercentage]="dep.sectionDetails.businessDelivery.percentage"
+                [headSixPercentage]="dep.sectionDetails.hcd.percentage"
+
+                ></app-section>
+            </ng-container>
+
+            <ng-container *ngIf="showSect">
+              <app-section class="d-none d-md-block col-md-6 d-flex justify-content-start" *ngFor="let dep of filteredDep"
+              [leftRect]="false"
+              [dtcSLM]="dep.dtc.sinceLastMonth"
+              [dtcActual]="dep.dtc.actual"
+              [dtcPlanned]="dep.dtc.planned"
+              [denSLM]="dep.den.sinceLastMonth"
+              [denActual]="dep.den.actual"
+              [denPlanned]="dep.den.planned"
+              ></app-section>
+            </ng-container>
+
+        </div>
+
+    </div>
+
+  </div>
+
+</div>

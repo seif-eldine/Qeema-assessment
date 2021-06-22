@@ -1,0 +1,21 @@
+<div class="progress-bar-container">
+  <div
+    class="secondary-bar secondary-{{ color }}"
+    [ngStyle]="{ width: planned + '%' }"
+  ></div>
+
+  <div
+    class="progress-bar {{ color }}"
+    [ngStyle]="{ width: actual + '%' }"
+  ></div>
+  <span class="sticky-span" [ngStyle]="{ left: actual + '%' }">
+    <span class="me-3">
+      {{ actual }}%
+      <span class="text-muted percentage-text">Actual</span>
+    </span>
+    <span>
+      {{ planned }}%
+      <span class="text-muted percentage-text">Planned</span></span
+    >
+  </span>
+</div>

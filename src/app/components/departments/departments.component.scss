@@ -1,0 +1,38 @@
+
+.main-holder{
+  height: 100%;
+  width: 100%;
+  background-color: #5b13aa;
+  margin: auto;
+}
+
+.upper-row{
+  color: white;
+  align-items: center;
+
+}
+
+.down-row{
+  color: black;
+}
+
+p{
+  font-size: 17px;
+}
+
+img{
+  height: 240px;
+}
+.depBox{
+  width: 265px;
+  margin-right: 15px;
+}
+
+
+app-section{
+  display: block;
+}
+
+.selected{
+  background-color: yellow;
+}
