@@ -1,5 +1,4 @@
-import { Component, HostBinding, HostListener, Input, OnInit } from '@angular/core';
-import { HighlighterService } from 'src/app/highlighter.service';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-department-box',
@@ -12,28 +11,9 @@ export class DepartmentBoxComponent implements OnInit {
   @Input() depIcon!: string;
   @Input() depId!: number;
 
-
-
-  @HostBinding('class.selected') public bolRec: boolean = false;
-
-  constructor(private highlighter: HighlighterService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.converter()
   }
-
-  @HostListener('click') public selectDept() {
-    this.highlighter.select(this.depId);
-  }
-
-  converter(){
-    if(this.highlighter.selectedDeptId === this.depId){
-      this.bolRec = true;
-    } else {
-      this.bolRec = false
-    }
-    console.log("highliter id>>>", this.highlighter.selectedDeptId, "DEP ID ", this.depId)
-  }
-
 
 }
